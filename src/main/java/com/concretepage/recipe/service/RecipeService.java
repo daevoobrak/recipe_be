@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.concretepage.rating.entity.Rating;
 import com.concretepage.recipe.dao.IDetailDAO;
 import com.concretepage.recipe.dao.IRecipeDAO;
 import com.concretepage.recipe.entity.Detail;
@@ -40,7 +41,17 @@ public class RecipeService implements IRecipeService {
 			obj.put("category", recipe.getCategory());
 			obj.put("description", det.getDescription());
 			obj.put("author", det.getAuthor());
-			obj.put("rating", det.getRating());
+			if(null != recipe.getRatings()){
+				List<Rating> rlist = recipe.getRatings();
+				Double sum = 0.00;
+				for(Rating r: rlist){
+					sum = sum + Integer.parseInt(r.getRating());
+				}
+				Double avg = sum /rlist.size();
+				obj.put("rating", Math.round(avg) + "");
+			} else {
+				obj.put("rating", "0");
+			}
 			recipeObjList.add(obj);
 		}
 		return recipeObjList;

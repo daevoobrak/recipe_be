@@ -14,7 +14,6 @@ public class Detail {
 	@GeneratedValue(strategy=GenerationType.AUTO)
     private int id;  
 	private String description;
-	private Integer rating;
 	private String author;
 	private String header;
 	public int getId() {
@@ -28,12 +27,6 @@ public class Detail {
 	}
 	public void setDescription(String description) {
 		this.description = description;
-	}
-	public Integer getRating() {
-		return rating;
-	}
-	public void setRating(Integer rating) {
-		this.rating = rating;
 	}
 	public String getAuthor() {
 		return author;
