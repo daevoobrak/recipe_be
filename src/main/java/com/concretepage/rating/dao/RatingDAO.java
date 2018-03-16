@@ -31,7 +31,7 @@ public class RatingDAO extends BaseDAO<Rating> implements IRatingDAO {
 	@Override
 	public Rating getRatingByIpandId(Long id, String ip) {
 		try{
-			return  entityManager.createQuery("select a FROM "+type.getName()+" a WHERE a.id = :id and a.ip_address = :ip", Rating.class)
+			return  entityManager.createQuery("select a FROM "+type.getName()+" a WHERE a.recipe.id = :id and a.ip_address = :ip", Rating.class)
 					.setParameter("ip", ip)
 					.setParameter("id", id)
 					.getSingleResult();
