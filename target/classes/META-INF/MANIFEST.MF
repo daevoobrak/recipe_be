@@ -4,8 +4,7 @@ Implementation-Version: 0.0.1-SNAPSHOT
 Built-By: divya_singh
 Implementation-Vendor-Id: com.concretepage
 Build-Jdk: 1.8.0_101
-Implementation-URL: http://projects.spring.io/spring-boot/spring-boot-
- demo/
+Implementation-URL: http://projects.spring.io/spring-boot/Daevoobrak/
 Created-By: Maven Integration for Eclipse
 Implementation-Vendor: Pivotal Software, Inc.
 
